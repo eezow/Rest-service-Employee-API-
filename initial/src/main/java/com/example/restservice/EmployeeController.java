@@ -36,8 +36,32 @@ public class EmployeeController {
         produces = "application/json"
     )
 
+    public Employees getEmployees(){
+        return employeeManager.getEmployees();
+    }
 
-    public Employees getEmployeesAll(){
+    @PostMapping(
+            path = "/",
+            consumes = "application/json",
+            produces = "application/json"
+    )
+
+    public ResponseEntity<Object> addEmployee(
+            @RequestBody Employee employee)
+    {
+        Integer id = employeeManager.getEmployees().getEmployeeList().size() + 1;
+
+        employee.setId(id);
+
+        employeeManager.addEmployee(employee);
+
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(employee.getId()).toUri();
+
+        return ResponseEntity.created(location).build();
+    }
+
+
+   public Employees getEmployeesAll(){
         return employeeManager.getEmployees();
     }
 

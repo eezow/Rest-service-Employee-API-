@@ -47,4 +47,12 @@ public class EmployeeManager {
 
         return list;
     }
+
+
+    public void addEmployee(Employee employee){
+        list.getEmployeeList().add(employee);
+    }
+
+
+
 }
