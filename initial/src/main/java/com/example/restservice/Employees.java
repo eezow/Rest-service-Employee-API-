@@ -1,34 +1,25 @@
 package com.example.restservice;
-
 import java.util.ArrayList;
 import java.util.List;
-
-
-
-
-//class to store employees , getters and setters 
-//support
+  
 
 public class Employees {
-    //list of employees
+  
     private List<Employee> employeeList;
-
-    public List<Employee> getEmployeeList(){
-        if (employeeList == null ){
+  
+    public List<Employee> getEmployeeList()
+    {
+  
+        if (employeeList == null)
+        {
             employeeList = new ArrayList<>();
-
         }
+  
         return employeeList;
     }
-
-
-    public void 
-    setEmployeeList( List<Employee> employeeList){
-        this.employeeList = employeeList;
+  
+    public void setEmployeeList(List<Employee> employeeList)
+    {
+        this.employeeList= employeeList;
     }
-
-
-
-
-
 }

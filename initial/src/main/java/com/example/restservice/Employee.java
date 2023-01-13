@@ -1,93 +1,61 @@
 package com.example.restservice;
 
+public class Employee {
 
-//creating a Resource employee class
-public class Employee extends Employees {
-    public Employee(){}
-        //parametised constructure
+	private final String employee_id;
+    private final String first_name;
+    private final String last_name;
+    private final String email;
+    private final String title;
 
-        public Employee(
-            Integer id, String firstName, 
-            String lastName,String email , String title
-        ){
+    public Employee(String employee_id,
+                    String first_name,
+                    String last_name,
+                    String email,
+                    String title)
+    {
+        this.employee_id = employee_id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.title = title;
+    }
 
+    @Override
+    public String toString()
+    {
+  
+        return "Employee: ID = "
+            + employee_id + ", First Name = "
+            + first_name + ", Last Name = "
+            + last_name + ", email = "
+            + email + ", title = "
+            + title;      
+    }
 
-            super();
-            this.id = id;
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.email = email;
-            this.title = title;
-        }
+    public String getId()
+    {
+        return employee_id;
+    }
 
-        private Integer id;
-        private String firstName;
-        private String lastName;
-        private String email;
-        private String title;
+    public String getFirstName()
+    {
+        return first_name;
+    }
 
+    public String getLastName()
+    {
+        return last_name;
+    }
 
+    public String getEmail()
+    {
+        return email;
+    }
 
-        @Override
-        public String toString()
-        {
+    public String getTitle()
+    {
+        return title;
+    }
 
-            return "Employee [id="
-                    + id + ", firstName="
-                    + firstName + ", lastName="
-                    + lastName + ", email="
-                    + email + ", title="
-                    + title +"]";
-
-
-        }
-
-
-        //getters
-        public Integer getId(){
-            return id;
-        }
-
-        public String getFirstName(){
-            return firstName;
-        }
-
-        public void setId(Integer id){
-            this.id = id;
-        }
-
-        public void setFirstName(String firstName){
-            this.firstName = firstName;
-        }
-
-        public String getLastName(){
-            return lastName;
-        }
-
-        public void setLastName( String lastName){
-            this.lastName = lastName;
-        }
-
-        public String getEmail(){
-            return email;
-        }
-
-        public void setEmail(String email){
-            this.email = email;
-        }
-
-        public String getTitle(){
-            return title;
-        }
-
-        public void setTitle(String title){
-            this.title = title;
-        }
-
-
-
-   
-
-
-    
 }
